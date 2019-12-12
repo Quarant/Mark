@@ -9,14 +9,13 @@
 #include <iostream>
 #endif
 namespace nameManager{
-    static nameManager* nameManager::getInstance()
-    {
-        if(instance == 0)
-            static nameManager instance = new nameManager::nameManager();
-
-        return instance;
-
-    };
+    // static nameManager & getInstance()
+    // {
+    //     static nameManager sig;
+    //     return sig;
+    // }
+    
+    
 
     void nameManager::loadNames(std::string nameLoc)
     {
