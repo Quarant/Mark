@@ -1,4 +1,3 @@
-#pragma once
 #include "h_cashRegister.h"
 #include <string>
 namespace cashRegister
