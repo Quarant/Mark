@@ -5,9 +5,8 @@
 #include <ctime>
 
 
-#if debug(DEBUG_INFO) || debug(DEBUG_WARN)
-#include <iostream>
-#endif
+
+
 namespace nameManager{
     // static nameManager & getInstance()
     // {
@@ -23,13 +22,21 @@ namespace nameManager{
 
         std::srand(std::time(NULL));
         std::ifstream input = std::ifstream(nameLoc);
-        #if debug(DEBUG_WARN)
-        if(input.good())
-            std::cout<< "[WARN] FILE " << nameLoc << " exist" << std::endl;
-        else
-            std::cout<< "[WARN] FILE " << nameLoc << " not exist" << std::endl;
+        // #if debug(DEBUG_WARN)
+        // if(input.good())
+        //     std::cout<< "[WARN] FILE " << nameLoc << " exist" << std::endl;
+        // else
+        //     std::cout<< "[WARN] FILE " << nameLoc << " not exist" << std::endl;
         
-        #endif
+        // #endif
+        if(input.good())
+            ERROR("FILE EXIST")
+        else
+        {
+            CRITICAL("FILE NOT EXIST")
+            exit(FILE_NOT_EXIST)
+        }
+    
         std::string line;
         while(getline(input,line))
         {
@@ -37,11 +44,11 @@ namespace nameManager{
         }
 
 
-    }
+    };
     nameManager::nameManager()
     {
         
-    }
+    };
 
     char* nameManager::randName()
     {
@@ -49,9 +56,9 @@ namespace nameManager{
         // std::srand(std::time(NULL));
         //can be problematic soooo let's hope it wont :D ¯\_(ツ)_/¯
         std::advance(it,std::rand() % this->names.size());
-        #if debug(DEBUG_INFO)
-        std::cout << "[INFO] ITERATOR OUTPUT "  << it->c_str() << std::endl;
-        #endif
+        // #if debug(DEBUG_INFO)
+        // std::cout << "[INFO] ITERATOR OUTPUT "  << it->c_str() << std::endl;
+        // #endif
         return const_cast<char*> (it->c_str());
-    }
+    };
 }

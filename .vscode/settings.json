@@ -44,7 +44,10 @@
         "streambuf": "cpp",
         "typeinfo": "cpp",
         "bit": "cpp",
-        "ctime": "cpp"
+        "ctime": "cpp",
+        "chrono": "cpp",
+        "ratio": "cpp",
+        "thread": "cpp"
     },
     "C_Cpp.dimInactiveRegions": true,
     "C_Cpp.errorSquiggles": "Disabled",
