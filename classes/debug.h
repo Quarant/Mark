@@ -1,16 +1,17 @@
+#pragma once
 // #define debug(deb) (deb == 1)
 #define DEBUG_INFO 1
 #define DEBUG_WARN 0
 #define DEBUG_ERROR 0 
 #define DEBUG_CRITICAL 0
 
-#define INFO(MESSAGE) std::cout << "\e[39m[INFO] " << MESSAGE << " \e[39m" << std::endl; 
+#define INFO(MESSAGE) std::cout << "\e[39m[INFO] " << MESSAGE << " \e[39m" << std::endl
 
-#define WARN(MESSAGE) std::cout << "\e[96m[WARN] " << MESSAGE << " \e[39m" << std::endl;
+#define WARN(MESSAGE) std::cout << "\e[96m[WARN] " << MESSAGE << " \e[39m" << std::endl
 
-#define ERROR(MESSAGE) std::cout << "\e[91m[ERROR] " << MESSAGE << " \e[39m" << std::endl; 
+#define ERROR(MESSAGE) std::cout << "\e[91m[ERROR] " << MESSAGE << " \e[39m" << std::endl
 
-#define CRITICAL(MESSAGE) std::cout << "\e[95m[CRITICAL] " << MESSAGE << " \e[39m" << std::endl; 
+#define CRITICAL(MESSAGE) std::cout << "\e[95m[CRITICAL] " << MESSAGE << " \e[39m" << std::endl
 
 // #define debug_info if(DEBUG_INFO==1)
 
@@ -56,4 +57,4 @@
 
 
 // ERROR_CODES
-#define FILE_NOT_EXIST -100
+#define CODE_FILE_NOT_EXIST -100

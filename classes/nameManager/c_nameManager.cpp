@@ -30,11 +30,11 @@ namespace nameManager{
         
         // #endif
         if(input.good())
-            ERROR("FILE EXIST")
+            INFO("FILE EXIST");
         else
         {
-            CRITICAL("FILE NOT EXIST")
-            exit(FILE_NOT_EXIST)
+            CRITICAL("FILE NOT EXIST");
+            exit(CODE_FILE_NOT_EXIST);
         }
     
         std::string line;

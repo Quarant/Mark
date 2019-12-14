@@ -7,11 +7,11 @@ namespace nameManager
     class nameManager
     {
         private:
-        static nameManager* instance;
         nameManager();
         nameManager(const nameManager & );
 
         public:
+        // static nameManager* instance;
         std::vector<std::string> names;
         void loadNames(std::string fileLoc);
 

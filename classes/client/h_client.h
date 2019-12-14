@@ -24,7 +24,7 @@ namespace client
         pos P;
 
         void do_stuff();
-        // client(client::pos);
+        client(pos p);
 
         
 

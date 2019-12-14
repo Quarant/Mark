@@ -21,11 +21,8 @@ namespace client
     };
     void client::client::printName()
     {
-        while(true){
         std::cout << this->name << " " << this->id <<   std::endl;
         usleep(std::rand() % 60);
-        }
-        auto a = 0;
         std::cout << "finished";
         // std::cin >> a;
     };
@@ -38,6 +35,12 @@ namespace client
     client::client::client()
     {
 
+    };
+    client::client::client(client::pos pos)
+    {
+        this->P = client::pos();
+        this->P.x = p.pos
+        this->P.y = p.pos
     };
     // client::client::client(int i)
     // {
