@@ -19,6 +19,7 @@ static void work(client::client c)
 
 int main()
 {
+    auto a = 0;
     
     // std::vector<cashRegister::cashRegister> vec = std::vector<cashRegister::cashRegister>();
     // // cashRegister::cashRegister kasa = cashRegister::cashRegister("cos ");
@@ -44,21 +45,45 @@ int main()
     WARN("MARKET ADDRESS");
     ERROR(&m);
 
-    auto clients = std::vector<client::client*>();
-    int id = 0 ;
-    for(int i=0 ;i <10 ; i++)
-    {
-        client::client* c = new client::client(client::pos {std::rand()%100,std::rand()%100});
-        c->name= name2.randName() ;
-        c->id=id++;
-        clients.push_back(c);
-    }
+    // auto clients = std::vector<client::client*>();
+    // int id = 0 ;
+    // for(int i=0 ;i <10 ; i++)
+    // {
+    //     client::client* c = new client::client( std::rand()%100,std::rand()%100);
+    //     c->name= name2.randName() ;
+    //     c->id=id++;
+    //     clients.push_back(c);
+    // }
     // WARN("MARKET ADRESS "+&m2);
-    auto c = clients[0];
-    c->printName();
     // m.space[0][0] = clients[0];
     // m.space[0][0].printName()
+    // auto c = clients[0];
 
+    for(int i =0 ; i <10 ; i ++)
+    {
+        m.spawnClient();
+    }
+    while(m.haveClients())
+    {
+        std::cout << m.haveClients() << std::endl;
+        ERROR(m.haveClients());
+        if(m.haveClients()){
+            m.moveClients();
+            std::cin >> a;
+            m.deleteClient(1);
+        }
+    }
+    // while(true){
+    //     for(int i=0 ; i< clients.size();i++)
+    //     {
+    //         clients[i]->move(std::rand()%100,std::rand()%100);
+    //     }
+    //     std::cin >> a;
+    // }
+    // {
+    //     c->move(std::rand(),std::rand());
+    //     std::cin >> a;
+    // }
 
     // delete &id;
     // for (auto client:clients)
@@ -72,7 +97,7 @@ int main()
     //     // std::cout << client.name << std::endl;
     // }
 
-    auto a = 0;
+    
     std::cin >> a; 
     // std::cout << &name << "\t" << &name2 << "\t" << std::endl;
 
@@ -81,6 +106,6 @@ int main()
     //     std::cout << n.randName() << " random name" << std::endl;
     // }
    
-    // std::cout <<  << std::endl;
+    std::cout << "koniec" << std::endl;
     return 0;
 }

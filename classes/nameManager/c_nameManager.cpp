@@ -30,7 +30,9 @@ namespace nameManager{
         
         // #endif
         if(input.good())
+        {
             INFO("FILE EXIST");
+        }
         else
         {
             CRITICAL("FILE NOT EXIST");

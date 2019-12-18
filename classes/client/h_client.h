@@ -18,13 +18,16 @@ namespace client
         int id;
         client();
         client(const client & );
-        // client(int i);
+        client(int x,int y);
         
+        // client(int i);
+        //TELEPORTATION !
+        void move(int x, int y);
+
         char* name;
         pos P;
 
         void do_stuff();
-        client(pos p);
 
         
 
