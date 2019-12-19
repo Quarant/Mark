@@ -1,9 +1,10 @@
 #pragma once
 // #define debug(deb) (deb == 1)
+// just leave it it wont hurt
 #define DEBUG_INFO 1
-#define DEBUG_WARN 0
-#define DEBUG_ERROR 0 
-#define DEBUG_CRITICAL 0
+#define DEBUG_WARN 1
+#define DEBUG_ERROR 1 
+#define DEBUG_CRITICAL 1
 
 #define INFO(MESSAGE) std::cout << "\e[39m[INFO] " << MESSAGE << " \e[39m" << std::endl
 
@@ -11,7 +12,7 @@
 
 #define ERROR(MESSAGE) std::cout << "\e[91m[ERROR] " << MESSAGE << " \e[39m" << std::endl
 
-#define CRITICAL(MESSAGE) std::cout << "\e[95m[CRITICAL] " << MESSAGE << " \e[39m" << std::endl
+#define CRITICAL(MESSAGE) std::cout << "\e[107m\e[31m[CRITICAL] " << MESSAGE << " \e[49m\e[39m" << std::endl
 
 // #define debug_info if(DEBUG_INFO==1)
 
@@ -58,3 +59,4 @@
 
 // ERROR_CODES
 #define CODE_FILE_NOT_EXIST -100
+#define PRODUCT_NOT_EXIST -200

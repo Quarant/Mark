@@ -33,7 +33,7 @@ namespace List
     }
     int List::List::size()
     {
-        return this->length;
+        return this->length-1;
     }
 
     // https://www.geeksforgeeks.org/write-a-function-to-get-nth-node-in-a-linked-list/
@@ -54,8 +54,15 @@ namespace List
 
     node* List::List::getNode(int i)
     {
+        if(i<=0){
+            CRITICAL("<=0 ?! rly");
+            return NULL;
+        }
         if(this->length < i)
+        {
             CRITICAL("INDEX OUT OF RANGE ");
+            return NULL;
+        }
         node *current = this->head;
         int count = 0;
         while (current != NULL)
@@ -67,6 +74,7 @@ namespace List
             current = current->next;
         }
         // in case of error
+        return NULL;
         assert(0);
     }
     node* List::List::getNode(client::client *i)
@@ -81,6 +89,7 @@ namespace List
             current = current->next;
         }
         // in case of error
+        return NULL;
         assert(0);
     }
 
@@ -123,7 +132,7 @@ namespace List
         // Check if node really exists in Linked List
         if (prev->next == NULL)
         {
-            std::cout << "\nGiven node is not present in Linked List";
+            ERROR("NODE DO NOT EXIST");
             return;
         }
 

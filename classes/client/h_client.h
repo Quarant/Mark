@@ -1,5 +1,7 @@
 #pragma once
 #include <thread>
+#include "../product/h_product.h"
+#include <vector>
 
 namespace client
 {
@@ -13,6 +15,7 @@ namespace client
     class client
     {
         public:
+        std::vector<product::product*> wants = std::vector<product::product*>();
         std::thread worker;
         void printName();
         int id;
@@ -23,6 +26,7 @@ namespace client
         // client(int i);
         //TELEPORTATION !
         void move(int x, int y);
+        void whatIWant();
 
         char* name;
         pos P;

@@ -20,7 +20,7 @@ namespace nameManager{
     {
         
 
-        std::srand(std::time(NULL));
+        
         std::ifstream input = std::ifstream(nameLoc);
         // #if debug(DEBUG_WARN)
         // if(input.good())
@@ -31,7 +31,7 @@ namespace nameManager{
         // #endif
         if(input.good())
         {
-            INFO("FILE EXIST");
+            // INFO("FILE EXIST");
         }
         else
         {

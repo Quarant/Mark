@@ -12,6 +12,7 @@ namespace market
     //     for(int i=0;i<100;i++)
     //         for(int j=0;j<100;j++)
     //             // this->space[i][j] = std::vector<vector>();
+    //pushing null customer to not fully deleting list 
     this->haveC = true;
     auto c = new client::client();
     clients->push_back(c);
@@ -74,14 +75,14 @@ namespace market
     void market::market::deleteClient(int i)
     {
         if(clients->length == 1) return;
-        if(clients->length > 1)
+        if(this->haveC)
         {
         auto c  = clients->getNode(i);
-        this->clients->deleteNode(c);
+            this->clients->deleteNode(c);
         }else
         {
-            this->haveC = true;
-            free(clients);
+            this->haveC = false;
+            // free(clients);
         }
 
     }

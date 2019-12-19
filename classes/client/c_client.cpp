@@ -4,6 +4,8 @@
 #include "../debug.h"
 #include <thread>
 #include <unistd.h>
+#include "../product/h_product.h"
+#include "../shelfManager/h_shelfManager.h"
 
 
 // #if debug(DEBUG_INFO)
@@ -37,7 +39,14 @@ namespace client
     };
     client::client::client()
     {
-
+        this->P = {0,0};
+        auto& shelfManager =  shelfManager::shelfManager::getInstance();
+        for(int i =0 ; i < std::rand()%10;i++)
+        {
+            auto product = new product::product();
+            product->name = shelfManager.aviableProducts()[std::rand()%shelfManager.sizeOfProducts()];
+            this->wants.push_back(product);
+        }
     };
     client::client::client(int x,int y)
     {
@@ -69,4 +78,16 @@ namespace client
     // {
     //     this->id = i;
     // };
+
+    void client::client::whatIWant()
+    {
+        std::string items = "";
+        for(auto item : this->wants)
+        {
+            items += item->name + " ";
+        }
+        std::string tmp = std::string(this->name);
+        items = tmp + " " + items;
+        INFO(items);
+    }
 }
